@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11201" systemVersion="16A323" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11201" systemVersion="16A323" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="ORh-nU-Opn">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11161"/>
@@ -39,18 +39,20 @@
                             <constraint firstAttribute="trailingMargin" secondItem="R0m-Nv-yXr" secondAttribute="trailing" id="rZ3-85-sAh"/>
                         </constraints>
                     </view>
+                    <navigationItem key="navigationItem" id="uH6-l8-V6G"/>
                     <connections>
                         <outlet property="numberTable" destination="R0m-Nv-yXr" id="qIv-vY-nbs"/>
+                        <segue destination="Yvq-Yl-zDT" kind="show" identifier="showResult" id="Jcn-B2-EKw"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-79.200000000000003" y="128.18590704647679"/>
+            <point key="canvasLocation" x="860" y="128.18590704647679"/>
         </scene>
-        <!--View Controller-->
+        <!--Result View Controller-->
         <scene sceneID="mwc-Hr-68J">
             <objects>
-                <viewController id="Yvq-Yl-zDT" sceneMemberID="viewController">
+                <viewController id="Yvq-Yl-zDT" customClass="ResultViewController" customModule="NumberGame" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="jzI-8X-OdC"/>
                         <viewControllerLayoutGuide type="bottom" id="orW-1b-uye"/>
@@ -76,10 +78,31 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
+                    <connections>
+                        <outlet property="resultLabel" destination="alm-Qe-llr" id="Pcp-8b-aOj"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="hEx-fZ-b9K" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="752.79999999999995" y="120.98950524737631"/>
+            <point key="canvasLocation" x="982" y="128"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="Fwr-8C-HLx">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="ORh-nU-Opn" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="OsC-PN-n3a">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="vfn-j3-7Fs"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="tGY-5Z-Ql7" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-79.200000000000003" y="128.18590704647679"/>
         </scene>
     </scenes>
 </document>

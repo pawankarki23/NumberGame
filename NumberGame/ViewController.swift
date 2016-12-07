@@ -33,6 +33,22 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         cell.textLabel?.text = String(numbers[indexPath.row])
         return cell
     }
+    
+    // go to the other view controller when a row is selected
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        
+        let selectedNumber = String(numbers[indexPath.row])
+        // go to showResult view controller, send the selected nunmber
+        performSegue(withIdentifier: "showResult", sender: selectedNumber )
+    }
+    
+    // this will send the data from this view controller to otehr
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        
+        let destViewController = segue.destination as! ResultViewController
+        
+        destViewController.selectedNumber = sender as! String
+    }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
